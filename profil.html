@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../../asset_dki_sulut/logo.png" type="image/png">
+    <title>Diskominfo Sulawesi Utara</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="konten.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <!-- <link href="bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Template Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Tambahkan ini di dalam setiap halaman di dalam iframe -->
+    <script>
+        window.addEventListener('load', () => {
+            window.parent.postMessage({ type: 'updateLastVisitedPage', url: window.location.href }, '*');
+        });
+    </script>
+
+    <!-- kotak navigasi bagian atas -->
+    <nav id="profil_navbar_top">
+        <a href="../home/home.html" style="display: flex; text-decoration: none;">
+            <img id="logo_sulut" src="../../asset_dki_sulut/logo.png" alt="Logo" />
+            <div id="hdr_text_logo">
+                <h5 id="txt_dki1">Dinas Komunikasi, Informatika,</h5>
+                <h5 id="txt_dki2">Persandian dan Statistik</h5>
+                <h6 id="txt_Sulut">Sulawesi Utara</h6>
+            </div>
+        </a>
+        <div id="hdr_nav_btn">
+            <button class="btn_navigation" style="background-color: rgba(255, 0, 0, 0.1); border-radius: 20px;" data-url="https://example.com">Profil</button>
+            <button class="btn_navigation" onclick="navigateInformasi()">Informasi</button>
+            <script>
+                function navigateInformasi() {
+                  window.location.href = '../informasi/informasi.html';
+                }
+            </script>
+            <button class="btn_navigation" id="openModalProgram">
+                Program
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation" id="openModalRegulasi">
+                Regulasi
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation" id="openModalLaporan">
+                Laporan
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation" id="openModalLayanan">
+                Layanan
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation" id="openModalPPID">
+                PPID
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button id="icon_menu_dropdown" class="btn_navigation"> 
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- kotak dropdown yang berisi navigasi ketika layar dikecilkan -->
+    <div class="dropdown_profil">
+        <button class="menu_dropdown_navigation" data-url="https://example.com">> Profil <</button>
+        <button class="menu_dropdown_navigation" onclick="navigateToPage()">Informasi</button>
+            <script>
+                function navigateToPage() {
+                  window.location.href = 'pages/informasi/informasi.html';
+                }
+            </script>
+        <select id="nav_menu_1" class="menu_dropdown_navigation">
+            <option value="">Program</option>
+            <option value="page1.html">Rencana Strategis</option>
+            <option value="page2.html">Indikator Kinerja Utama</option>
+            <option value="page3.html">Perjanjian Kinerja</option>
+            <option value="page4.html">Rencana Anggaran</option>
+            <option value="page5.html">Ringkasan RKA</option>
+        </select>
+
+        <select id="nav_menu_2" class="menu_dropdown_navigation">
+            <option value="">Regulasi</option>
+            <option value="page1.html">Laporan Keuangan</option>
+            <option value="page2.html">Ringkasan DPA</option>
+            <option value="page3.html">Ringkasan LRA</option>
+        </select>
+
+        <select id="nav_menu_3" class="menu_dropdown_navigation">
+            <option value="">Laporan</option>
+            <option value="page1.html">Landasan Hukum</option>
+            <option value="page2.html">Peraturan Pemerintah</option>
+            <option value="page3.html">Peraturan Gubernur</option>
+        </select>
+
+        <select id="nav_menu_4" class="menu_dropdown_navigation">
+            <option value="">Layanan</option>
+            <option value="page1.html">Maklumat Pelayanan</option>
+            <option value="page2.html">Jenis Layanan</option>
+            <option value="page3.html">Layanan DKIPS</option>
+            <option value="page4.html">WHI STLEBLOWING SYSTEM</option>
+            <option value="page5.html">Pengadman/Laporan</option>
+        </select>
+
+        <select id="nav_menu_5" class="menu_dropdown_navigation">
+            <option value="">PPID</option>
+            <option value="page1.html">Profil PPID</option>
+            <option value="page2.html">Informasi Terbuka Setiap Saat</option>
+            <option value="page3.html">Informasi Terbuka Berkala</option>
+            <option value="page4.html">Informasi Berkala</option>
+            <option value="page5.html">Kontak</option>
+        </select>
+     
+        <script>
+            function addNavigationListener(selectId) {
+                document.getElementById(selectId).addEventListener('change', function() {
+                    const selectedValue = this.value;
+                    if (selectedValue) {
+                        window.location.href = selectedValue;
+                    }
+                });
+            }
+        
+            // Add event listeners to both select elements
+            addNavigationListener('nav_menu_1');
+            addNavigationListener('nav_menu_2');
+            addNavigationListener('nav_menu_3');
+            addNavigationListener('nav_menu_4');
+            addNavigationListener('nav_menu_5');
+        </script>
+    </div>
+    <script>
+        document.getElementById('icon_menu_dropdown').addEventListener('click', function() {
+            var dropdown = document.querySelector('.dropdown_profil');
+            dropdown.classList.toggle('show');
+        });
+
+        function handleResize() {
+            var dropdown = document.querySelector('.dropdown_profil');
+            if (window.innerWidth > 1024) {
+                dropdown.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+    </script>
+
+    <!-- kotak modal untuk dropdown button pilihan halaman Program -->
+    <div id="myModalProgram" class="modal_Program">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Program</h2>
+            <button class="close_program">&times;</button>
+        </div>
+        <div class="HeaderButton">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRencanaStrategis()">
+                        <script>
+                            function navigateRencanaStrategis() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Rencana Strategis</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateIndikatorUtama()">
+                        <script>
+                            function navigateIndikatorUtama() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Indikator Kinerja Utama</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePerjanjuanKinerja()">
+                        <script>
+                            function navigatePerjanjuanKinerja() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Perjanjian Kinerja</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRencanaAnggaran()">
+                        <script>
+                            function navigateRencanaAnggaran() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Rencana Anggaran</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRingkasanRKA()">
+                        <script>
+                            function navigateRingkasanRKA() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Ringkasan RKA</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal_Program = document.getElementById("myModalProgram");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalProgram");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_program")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal_Program.style.display = "block";
+            modal_PPID.style.display = "none";
+            modal_Regulasi.style.display = "none";
+            modal_Laporan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal_Program.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal_Program) {
+                modal_Program.style.display = "none";
+            }
+        } 
+    </script>
+
+    <!-- kotak modal untuk dropdown button pilihan halaman Regulasi -->
+    <div id="myModalRegulasi" class="modal_Regulasi">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Regulasi</h2>
+            <button class="close_regulasi">&times;</button>
+        </div>
+        <div class="HeaderButton">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateLandasanHukum()">
+                        <script>
+                            function navigateLandasanHukum() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Landasan Hukum</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePeraturanPemerintah()">
+                        <script>
+                            function navigatePeraturanPemerintah() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Peraturan Pemerintah</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePeraturanGubernur()">
+                        <script>
+                            function navigatePeraturanGubernur() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Peraturan Gubernur</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal_Regulasi = document.getElementById("myModalRegulasi");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalRegulasi");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_regulasi")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal_Regulasi.style.display = "block";
+            modal_PPID.style.display = "none";
+            modal_Program.style.display = "none";
+            modal_Laporan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal_Regulasi.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal_Regulasi) {
+                modal_Regulasi.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- kotak modal untuk dropdown button pilihan halaman Laporan -->
+    <div id="myModalLaporan" class="modal_Laporan">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Laporan</h2>
+            <button class="close_laporan">&times;</button>
+        </div>
+        <div class="HeaderButton">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateLaporanKeuangan()">
+                        <script>
+                            function navigateLaporanKeuangan() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Laporan Keuangan</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRingkasanDPA()">
+                        <script>
+                            function navigateRingkasanDPA() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Ringkasan DPA</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRingkasanLRA()">
+                        <script>
+                            function navigateRingkasanLRA() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Ringkasan LRA</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateREN_KUE()">
+                        <script>
+                            function navigateREN_KUE() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">REN KEU</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal_Laporan = document.getElementById("myModalLaporan");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalLaporan");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_laporan")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal_Laporan.style.display = "block";
+            modal_PPID.style.display = "none";
+            modal_Program.style.display = "none";
+            modal_Regulasi.style.display = "none";
+            modal_Layanan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal_Laporan.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal_Laporan) {
+                modal_Laporan.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- kotak modal untuk dropdown button pilihan halaman Layanan -->
+    <div id="myModalLayanan" class="modal_Layanan">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Layanan</h2>
+            <button class="close_layanan">&times;</button>
+        </div>
+        <div class="HeaderButton">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateMaklumatPelayanan()">
+                        <script>
+                            function navigateMaklumatPelayanan() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Maklumat Pelayanan</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateJenisLayanan()">
+                        <script>
+                            function navigateJenisLayanan() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Jenis Layanan</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateLayananDKIPS()">
+                        <script>
+                            function navigateLayananDKIPS() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Layanan DKIPS</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateSYSTEM()">
+                        <script>
+                            function navigateSYSTEM() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">WHI STLEBLOWING SYSTEM</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePengadman()">
+                        <script>
+                            function navigatePengadman() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Pengadman/Laporan</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal_Layanan = document.getElementById("myModalLayanan");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalLayanan");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_layanan")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal_Layanan.style.display = "block";
+            modal_PPID.style.display = "none";
+            modal_Program.style.display = "none";
+            modal_Regulasi.style.display = "none";
+            modal_Laporan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal_Layanan.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal_Layanan) {
+                modal_Layanan.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- kotak modal untuk dropdown button pilihan halaman PPID -->
+    <div id="myModalPPID" class="modal_PPID">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">PPID</h2>
+            <button class="close_PPID">&times;</button>
+        </div>
+        <div class="HeaderButton">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateProfilPPID()">
+                        <script>
+                            function navigateProfilPPID() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Profil PPID</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateKontak()">
+                        <script>
+                            function navigateKontak() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Kontak</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateInformasiSetiapSaat()">
+                        <script>
+                            function navigateInformasiSetiapSaat() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Informasi Terbuka Setiap Saat</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateInformasiBerkala()">
+                        <script>
+                            function navigateInformasiBerkala() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Informasi Terbuka Berkala</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        // Get the modal
+        var modal_PPID = document.getElementById("myModalPPID");
+    
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalPPID");
+    
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_PPID")[0];
+    
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal_PPID.style.display = "block";
+            modal_Program.style.display = "none";
+            modal_Regulasi.style.display = "none";
+            modal_Laporan.style.display = "none";
+            modal_Layanan.style.display = "none";
+        }
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal_PPID.style.display = "none";
+        }
+    
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal_PPID) {
+                modal_PPID.style.display = "none";
+            }
+        }
+
+        // untuk menutup 3 modal secara otomatis ketika layar diperkecil
+        window.onresize = function() {
+            if (window.innerWidth < 768) { 
+                modal_PPID.style.display = "none";
+                modal_Program.style.display = "none";
+                modal_Regulasi.style.display = "none";
+                modal_Laporan.style.display = "none";
+                modal_Layanan.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- kontent -->
+    <div id="div_scroller">
+        <div id="header_caption">
+            <div style="display: flex; flex-direction: row;">
+                <a href="../home/home.html" style="margin-top: 20px; text-decoration: none; color: white;">Beranda</a>
+                <i class="fa-solid fa-angle-right" style="margin-top: 20px; margin-left: 12px; margin-right: 12px;"></i>
+                <h5 style="font-weight: bold;">Profil</h5>
+            </div>
+            <h2 style="font-weight: bolder; margin-top: 3%;">Profil Diskominfo Provinsi Sulawesi Utara</h2>
+            <h5 style="font-weight: 500;">Selayang pandang kisah perjalanan Diskominfo Sulut mewujudkan Sulut Digital Province</h5>
+        </div>
+        <div id="header_form">
+            <div id="box_form">
+                <!-- <div id="tabel_container"></div> -->
+                 <!-- Content Start -->
+                <div class="container">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="sejarah-tab" data-bs-toggle="tab" href="#sejarah" role="tab" aria-controls="sejarah" aria-selected="true">Sejarah</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="tugas-tab" data-bs-toggle="tab" href="#tugas" role="tab" aria-controls="tugas" aria-selected="false">Tugas Pokok dan Fungsi</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="struktur-tab" data-bs-toggle="tab" href="#struktur" role="tab" aria-controls="struktur" aria-selected="false">Struktur Organisasi</a>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="pimpinan-tab" data-bs-toggle="tab" href="#pimpinan" role="tab" aria-controls="pimpinan" aria-selected="false">Profil Pimpinan</a>
+                        </li> -->
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="sejarah" role="tabpanel" aria-labelledby="sejarah-tab">
+                            <h1>Sejarah</h1>
+                            <img src="../../asset_dki_sulut/kominfo_sulut.png" alt="kantor Diskominfo" class="office-img">
+                            <p >Dinas komunikasi informatika persandian dan statistik daerah (KIPS) sebagai Satuan Kerja Perangkat Daerah (SKPD) yang membidangi penyebarluasan informasi, pengembangan dan pendayagunaan Teknologi Informasi Komunikasi (TIK) serta statistik dan persandian dituntut mampu memberikan pelayanan kepada masyarakat secara transparan dan akuntabel di bidang komunikasi dan informatika. Dengan pelayanan tersebut upaya pemerataan informasi dan pemenuhan hak publik akan informasi dapat dilakukan. Dalam hal ini, diharapkan masyarakat lebih berdaya dalam memperoleh dan memanfaatkan infomrasi, yang dapat meningkatkan kesejahteraannya, sedangkan bagi jajaran pemerintah teruwjudnya implementasi e-government secara utuh menjadi tujuan yang diharapkan. Memperhatikan hal tersebut, kiranya berbagai media informasi perlu lebih diberdayakan dan didayagunakan dalam upaya penyebarluasan dan pemerataan informasi kepada masyarakat, disamping dengan tetap mendorong peran strategis potensi lembaga komuniksi masyarakat untuk dapat menjadi penyebar infomrasi sekaligus menjadi public relation di daerahnya. Pemerintah Daerah dalam menetapkan kebijakan dan melaksanakan pemerintahan dan pembangunan tentu memerlukan informasi yang tepat, mudah, dan cepat diakses, serta akurat. Untuk mengantisipasi kebutuhan tersebut, perlu dikembangan sinergi antara manajemen pemerintahan dan pemanfaatan teknologi informasi yang didukung keterhubungan jaraingan informasi yang mencakup seluruh institusi pemerintah.</p>
+                            
+                            <div class="visimisi-section">
+                                <div class="visi-section">
+                                    <h3>Visi</h3>
+                                    <h6>Sulawesi Utara Maju Dan Sejahtera<br>Indonesia Maju.</h6>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Misi</h3>
+                                    <h6>1.Peningkatan Kualitas Manusia Sulawesi Utara;</h6>
+                                    <h6>2.Penguatan Ekonomi yang Bertumpu pada Industri Pertanian, Perikanan, Pariwisata dan Jasa;</h6>
+                                    <h6>3.Pembangunan Infrastruktur dan Perluasan Konektivitas;</h6>
+                                    <h6>4.Pembangunan Daerah yang Berkelanjutan Lingkungan;</h6>
+                                    <h6>5.Pemerintahan yang Baik dan Bersih Didukung oleh Sinergitas Antar Daerah.</h6>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tugas" role="tabpanel" aria-labelledby="tugas-tab">
+                            
+                            <div class="visimisi-section">
+                                <h2>Tugas Pokok dan Fungsi</h2>
+                                <div class="visi-section">
+                                    <h3>Tugas Pokok</h3>
+                                    <p>Berdasarkan Peraturan Gubernur Sulawesi Utara Nomor 66 Tahun 2016 tentang Uraian Tugas Dinas KIPS Provinsi Sulawesi Utara mempunyai tugas melaksanakan urusan pemerintahan daerah berdasarkan asas otonomi dan tugas pembantuan di bidang Komunikasi, Informatika, Persandian dan Statistik.</p>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Fungsi</h3>
+                                    <p>Fungsi Dinas KIPS Provinsi Sulawesi Utara adalah berdasarkan Peraturan Gubernur Sulawesi Utara Nomor 6 Tahun 2011 tentang Perubahan Peraturan Gubernur Sulawesi Utara 63 tahun 2008 tentang Uraian Tugas sebagai berikut:</p>
+                                    <p>a. perumusan dan pelaksanaan kebijakan komunikasi informatika persandian dan statistik daerah;</p>
+                                    <p>b. mengkoordinasikan dan mengintegrasikan penyelenggaraan informasi dan komunikasi publik;</p>
+                                    <p>c. perumusan dan pelaksanaan kebijakan koordinasi dan integrasi penyelenggaraan e-government pemerintah daerah;</p>
+                                    <p>d. perumusan dan pelaksanaan kebijakan koordinasi dan integrasi penyelenggaraan persandian daerah;</p>
+                                    <p>e. perumusan dan pelaksanaan kebijakan koordinasi dan integrasi pelaksanaan urusan pemerintahan dan pelayanan publik berbasis teknologi komunikasi dan informasi;</p>
+                                    <p>f. pelaksanaan evaluasi dan pelaporan sesuai dengan lingkup tugasnya;</p>
+                                    <p>g. pelaksanaan administrasi dinas sesuai dengan lingkup tugasnya.</p>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="visimisi-section">
+                                <h2>Tugas Dan Fungsi Bagian Skretariat DKIPS</h2>
+                                <div class="visi-section">
+                                    <h3>Tugas</h3>
+                                    <p>Penyelenggaraan pelayanan administrasi umum dan kepegawaian, perencanaan dan keuangan serta tugas lainnya yang diberikan oleh pimpinan.</p>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Fungsi</h3>
+                                    <p>1. Pengoordinasian, sinkronisasi dan integrasi pelayanan administrasi;</p>
+                                    <p>2. Penyusunan perencanaan operasional dan pelaporan kegiatan;</p>
+                                    <p>3. Penyelenggaraan urusan umum dan kepegawaian;</p>
+                                    <p>4. Penyelenggaraan urusan perencanaan, keuangan dan pelaporan; dan</p>
+                                    <p>5. Pelaksanaan fungsi lain yang diberikan oleh Pimpinan.</p>
+                                </div>
+                            </div>
+                            <div class="visimisi-section">
+                                <h2>Tugas Dan Fungsi Bagian Bidang Komunikasi Dan Informasi Publik</h2>
+                                <div class="visi-section">
+                                    <h3>Tugas</h3>
+                                    <p>Pengelolaan komunikasi publik, pengelolaan informasi publik, kemitraan komunikasi dan informasi publik, pengelolaan data statistik serta tugas lainnya yang diberikan oleh pimpinan.</p>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Fungsi</h3>
+                                    <p>1. Perumusan dan pelaksanaan kebijakan bidang komunikasi dan informasi publik;</p>
+                                    <p>2. Pelaksanaan perencanaan komunikasi dan informasi publik;</p>
+                                    <p>3. Pengoordinasian pelaksanaan komunikasi dan informasi publik;</p>
+                                    <p>4. Penyelenggaraan urusan pengelolaan komunikasi dan informasi publik;</p>
+                                    <p>5. Penyelenggaraan urusan kemitraan komunikasi dan informasi publik;</p>
+                                    <p>6. Penyelenggaraan urusan pengelolaan data statistik;</p>
+                                    <p>7. Pelaksanaan tugas lain yang diberikan oleh pimpinan.</p>
+                                </div>
+                            </div>
+                            <div class="visimisi-section">
+                                <h2>Tugas Dan Fungsi Bagian Bidang Penyelenggaraan E-Government</h2>
+                                <div class="visi-section">
+                                    <h3>Tugas</h3>
+                                    <p>Pemberdayaan teknologi informatika, infrastruktur teknologi informatika dan integrasi pengembangan aplikasi serta tugas lainnya yang diberikan oleh pimpinan</p>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Fungsi</h3>
+                                    <p>1. Pelaksanaan perumusan dan pelaksanaan kebijakan penyelenggaraan e-government pemerintah daerah;</p>
+                                    <p>2. Pelaksanaan perencanaan dibidang penyelenggaraan e-government pemerintah daerah;</p>
+                                    <p>3. Pengoordinasian dan integrasi penyelenggaraan e-government pemerintah daerah;</p>
+                                    <p>4. Penyelenggaraan urusan pemberdayaan teknologi dan informasi;</p>
+                                    <p>5. Penyelenggaraan urusan infrastruktur dan teknologi;</p>
+                                    <p>6. Penyelenggaraan urusan pengembangan aplikasi; dan</p>
+                                    <p>7. Pelaksanaan tugas lain yang diberikan oleh pimpinan.</p>
+                                </div>
+                            </div>
+                            <div class="visimisi-section">
+                                <h2>Tugas Dan Fungsi Bagian Bidang Persandian</h2>
+                                <div class="visi-section">
+                                    <h3>Tugas</h3>
+                                    <p>Pelaksanaan tata kelola persandian, operasional pengamanan persandian, dan pengawasan dan evaluasi penyelenggara persandian serta tugas lain yang diberikan oleh pimpinan.</p>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Fungsi</h3>
+                                    <p>1. Perumusan dan pelaksanaan kebijakan dibidang persandian;</p>
+                                    <p>2.Perencanaan dibidang persandian;</p>
+                                    <p>3. Pengoordinasian dibidang persandian;</p>
+                                    <p>4. Penyelenggaraan urusan tata kelola persandian;</p>
+                                    <p>5. Penyelenggaraan urusan operasional pengamanan persandian;</p>
+                                    <p>6. Penyelenggaraan urusan pengawasan dan evaluasi tata persandian; dan</p>
+                                    <p>7. Pelaksanaan tugas lain yang diberikan oleh Pimpinan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="struktur" role="tabpanel" aria-labelledby="struktur-tab">
+                            <h1>Struktur Organisasi</h1>
+                            <img src="../../asset_dki_sulut/STRUKTUR-ORGANISASI-2023_1.png" alt="Struktur Organisasi" class="struktur-img">
+                        </div>
+                        <!-- <div class="tab-pane fade" id="pimpinan" role="tabpanel" aria-labelledby="pimpinan-tab">
+                            <h2>Profil Pimpinan</h2>
+                            <div class="visimisi-section">
+                                <h3>Kepala Dinas Komunikasi Informatika, Persandian dan Statistik Daerah Provinsi Sulawesi Utara</h3>
+                                <h5>Periode 2023-Sekarang</h5>
+                                <div class="pimpinan-img-container">
+                                    <h3>Evans Steven Liow, S.Sos, MM</h3>
+                                    <img src="../../asset_dki_sulut/kadis-dkips.png" alt="pimpinan" class="pimpinan-img">
+
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Riwayat Pendidikan</h3>
+                                    <h6>STPMD 'APMD' Jurusan Ilmu Sosiatri</h6>
+                                    <h6>STIE Indonesia Malang Jurusan Manajemen SDM</h6>
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Riwayat Jabatan</h3>
+                                    <h6>Kepala Balai LPSE Dinas Komunikasi dan Informatika Provinsi Jawa Barat (2010-2017)</h6>
+                                    <h6>Kepala Bidang Komunikasi dan Informasi Publik Dinas Komunikasi dan Informatika Provinsi Jawa Barat (2017-2018)</h6>
+                                    <h6>Kepala Bidang e-Government Dinas Komunikasi dan Informatika Provinsi Jawa Barat (2018-2019)</h6>
+                                    <h6>Kepala Biro Pengadaan Barang dan Jasa Sekretariat Daerah Provinsi Jawa Barat (2019-2022)</h6>
+                                    <h6>Kepala Dinas Komunikasi dan Informatika Provinsi Jawa Barat (2022 - sekarang)</h6>
+                                    
+                                </div>
+                                <div class="misi-section">
+                                    <h3>Riwayat Penghargaan</h3>
+                                    <h6>1. Satyalancana Karya Satya 10 Tahun</h6>
+                                    <h6>2. Satyalancana Karya Satya 20 Tahun</h6>
+                                    <h6>3. Penghargaan Gubernur Jawa Barat sebagai PNS Teladan Terbaik I Kategori Pejabat Struktural Eselon III Tahun 2014</h6>
+                                </div>
+                            </div>
+                            
+                        </div> -->
+                    </div>
+                </div>
+                <!-- Content End -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      const tabLinks = document.querySelectorAll('.nav-link');
+                      const tabPanes = document.querySelectorAll('.tab-pane');
+                    
+                      tabLinks.forEach(link => {
+                        link.addEventListener('click', function(event) {
+                          event.preventDefault();
+                    
+                          // Remove active class from all links
+                          tabLinks.forEach(link => link.classList.remove('active'));
+                          // Remove active class from all panes
+                          tabPanes.forEach(pane => pane.classList.remove('active', 'show'));
+                    
+                          // Add active class to the clicked link
+                          link.classList.add('active');
+                          // Add active class to the corresponding pane
+                          const tabId = link.getAttribute('href').substring(1);
+                          document.getElementById(tabId).classList.add('active', 'show');
+                        });
+                      });
+                    });
+                    </script>
+            </div>   
+        </div>
+ 
+        <!-- footer -->
+        <div id="footer_dkis">
+            <div id="header_logo">
+                <img src="../../asset_dki_sulut/logo.png" id="footer_logo"/>
+                <div id="header_text_dkis_down">
+                    <h3 id="text_diskominfo1">Dinas Komunikasi, Informatika</h3>
+                    <h3 id="text_diskominfo2">Persandian dan Statistik</h3>
+                    <p id="text_sulut">Sulawesi Utara</p>
+                </div>
+            </div>
+            <div id="contant_container">
+                <div class="header_contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="header_text_contact">
+                        <h4>DINAS KOMUNIKASI DAN INFORMATIKA</h4>
+                        <h4>PROVINSI SULAWESI UTARA</h4>
+                        <p>Jl. 17 Agustus No. 69 Manado 95119</p>
+                        <p>Telp. (0431) 865559 Fax. (0431) 865471</p>
+                    </div>
+                </div>
+                <div class="header_contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="header_text_contact">
+                        <h4>Telepon</h4>
+                        <p>+431-865559</p>
+                    </div>
+                </div>
+                <div class="header_contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="header_text_contact">
+                        <h4>Surel</h4>
+                        <p>dkips@sulutprov.go.id</p>
+                    </div>
+                </div>
+                <div class="header_contact">
+                    <i class="fa-solid fa-globe"></i>
+                    <div class="header_text_contact">
+                        <h4>Surel</h4>
+                        <div style="display: flex;">
+                            <button class="icon_btn" data-url="https://example.com">
+                                <i class="fa-brands fa-facebook" id="fb_icon"></i>
+                            </button>
+                            <button class="icon_btn" data-url="https://example.com">
+                                <i class="fa-brands fa-instagram" id="ig_icon"></i>
+                            </button>
+                            <button class="icon_btn" data-url="https://example.com">
+                                <i class="fa-brands fa-youtube" id="yt_icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

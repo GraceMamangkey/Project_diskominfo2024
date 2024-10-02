@@ -1,0 +1,581 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Untuk mencegah horizontal scroll jika diperlukan */
+    overflow-y: auto;
+    background-color: #FFFBF5;
+}
+
+html, body {
+    height: auto; /* Ganti dari 100% menjadi auto */
+}
+
+#profil_navbar_top {
+    background-color: rgba(255, 247, 252, 0.8);
+    display: flex;
+    padding: 20px;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000; 
+    width: 100%; /* Pastikan navbar tetap lebar penuh */
+}
+
+#logo_sulut {
+    height: 40px;
+    width: 40px;
+    margin-left: 0.2%;
+}
+
+#hdr_text_logo {
+    font-family: 'Arial', sans-serif;
+    margin-top: -17px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+#txt_dki1 {
+    color: #478CCF;
+    font-size: 12px;
+    width: 180px;
+}
+
+#txt_dki2 {
+    color: #478CCF;
+    margin-top: -21.5px;
+    font-size: 12px;
+}
+
+#txt_Sulut {
+    margin-top: -21px;
+    color: #03346E;
+    font-weight: bold;
+}
+
+#hdr_nav_btn {
+    display: flex;
+    /* width: 16%;  */
+    justify-content: space-between;
+    position: relative;
+    margin-left: 22%;
+    font-family: 'Arial', sans-serif;
+}
+
+.btn_navigation {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 12px 16px;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    display: block; 
+}
+
+.btn_navigation:focus {
+    outline: none;          
+}
+
+.btn_navigation:hover {
+    text-decoration: none;   
+}
+
+#icon_menu_dropdown {
+    display: none;
+    font-size: 24px;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    margin-left: 50%;
+}
+
+.dropdown_profil {
+    display: none;
+    flex-direction: column;
+    position: fixed; 
+    left: 0; 
+    top: 14%;
+    background-color: rgba(255, 0, 0, 0.8); 
+    z-index: 1;
+    width: 100%;
+    max-height: 300px;
+    /* overflow-y: auto;  */
+}
+
+.dropdown_profil.show {
+    display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+    .btn_navigation {
+        display: none;
+    }
+
+    #icon_menu_dropdown {
+        display: block;
+    }
+
+    .dropdown_profil {
+        width: 100%; 
+        padding-bottom: 10px;
+    }
+}
+
+.menu_dropdown_navigation {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 12px 16px;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    display: block; 
+    text-align: left;
+    width: 100%;
+}
+
+option {
+    color: #000;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* modal_Program */
+.modal_Program {
+    display: none;
+    flex-direction: column;
+    position: fixed; 
+    left: 0; 
+    top: 13%;
+    background-color: rgba(255, 0, 0, 0.8); 
+    z-index: 1;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* @media screen and (max-width: 1024px) {
+    #modal_Program {
+        padding-top: 17%;
+    }
+} */
+
+.close_program {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 85%;
+    margin-top: 1%;
+    background: none;
+    border: none;
+}
+
+.close_program:hover,
+.close_program:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* modal_Regulasi */
+.modal_Regulasi {
+    display: none;
+    flex-direction: column;
+    position: fixed; 
+    left: 0; 
+    top: 13%;
+    background-color: rgba(255, 0, 0, 0.8); 
+    z-index: 1;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* @media screen and (max-width: 1024px) {
+    #modal_Regulasi {
+        padding-top: 17%;
+    }
+} */
+
+.close_regulasi {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 85%;
+    margin-top: 1%;
+    background: none;
+    border: none;
+}
+
+.close_regulasi:hover,
+.close_regulasi:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* modal_Laporan */
+.modal_Laporan {
+    display: none;
+    flex-direction: column;
+    position: fixed; 
+    left: 0; 
+    top: 13%;
+    background-color: rgba(255, 0, 0, 0.8); 
+    z-index: 1;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* @media screen and (max-width: 1024px) {
+    #modal_Laporan {
+        padding-top: 17%;
+    }
+} */
+
+.close_laporan {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 85%;
+    margin-top: 1%;
+    background: none;
+    border: none;
+}
+
+.close_laporan:hover,
+.close_laporan:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* modal_Layanan */
+.modal_Layanan {
+    display: none;
+    flex-direction: column;
+    position: fixed; 
+    left: 0; 
+    top: 13%;
+    background-color: rgba(255, 0, 0, 0.8); 
+    z-index: 1;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* @media screen and (max-width: 1024px) {
+    #modal_Layanan {
+        padding-top: 17%;
+    }
+} */
+
+.close_layanan {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 85%;
+    margin-top: 1%;
+    background: none;
+    border: none;
+}
+
+.close_layanan:hover,
+.close_layanan:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* modal_PPID */
+.modal_PPID {
+    display: none;
+    flex-direction: column;
+    position: fixed; 
+    left: 0; 
+    top: 13%;
+    background-color: rgba(255, 0, 0, 0.8); 
+    z-index: 1;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* @media screen and (max-width: 1024px) {
+    #modal_PPID {
+        padding-top: 17%;
+    }
+} */
+
+.close_PPID {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 89%;
+    margin-top: 1%;
+    background: none;
+    border: none;
+}
+
+.close_PPID:hover,
+.close_PPID:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    #modal_Program {
+        padding-top: 17%;
+    }
+    #modal_Regulasi {
+        padding-top: 17%;
+    }
+    #modal_Laporan {
+        padding-top: 17%;
+    }
+    #modal_Layanan {
+        padding-top: 17%;
+    }
+    #modal_PPID {
+        padding-top: 17%;
+    }
+}
+
+.HeaderButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    width: 90%;
+}
+
+.menu_btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+}
+
+.icon {
+    background-color: rgba(255, 247, 252, 0.5);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_icon {
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.header_text_des {
+    text-align: left;
+    color: white;
+    margin-left: 15px;
+}
+
+.text_title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* konten */
+#header_caption {
+    background-color: #FF0000;
+    margin-top: 82px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+    #header_caption {
+        margin-top: 92px;
+    }
+}
+
+#div_scroller {
+    width: 100%;
+}
+ 
+#header_form {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    box-sizing: border-box; 
+    padding-bottom: 80px;
+}
+
+#box_form {
+    margin-top: -150px;
+    width: 90%;
+    background-color: #FFFBF5;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+#container_nav_btn_form {
+    background-color: transparent; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 300px;
+    font-family: 'Arial', sans-serif;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+@media (min-width: 769px) {
+    /* #box_form {
+        flex-direction: row;  
+        padding: 30px;
+        margin-top: -120px;
+    } */
+
+    #container_nav_btn_form {
+        margin-bottom: 0;  
+        margin-right: 20px;  
+    }
+}
+
+.btn_hkm_doc {
+    background: none;
+    border: none;
+    font-weight: bold;
+    margin-right: 15px; 
+}
+
+/* #tabel_container {
+    margin-left: 20px;
+    width: 100%;  
+} */
+
+
+/* footer */
+#footer_dkis {
+    padding: 30px 20px 30px 20px;
+    height: 350px;
+}
+
+#header_logo {
+    display: flex;
+}
+
+#footer_logo {
+    width: 70px;
+    height: auto;
+}
+
+#header_text_dkis_down{
+    margin-top: -14px;
+    font-family: 'Arial', sans-serif;
+    height: 50px;
+    margin-left: 10px;
+}
+
+#text_diskominfo1 {
+    color: #478CCF;
+}
+
+#text_diskominfo2 {
+    color: #478CCF;
+    margin-top: -18px;
+}
+
+#text_sulut {
+    margin-top: -18px;
+    color: #03346E;
+    font-weight: bold;
+}
+
+#contant_container {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+
+.header_contact {
+    display: flex;
+    flex-direction: row;
+}
+
+.header_text_contact {
+    font-family: 'Arial', sans-serif;
+    margin-left: 7px;
+    margin-top: -21px;
+}
+
+@media screen and (max-width: 768px) {
+    #contant_container {
+        flex-direction: column; 
+        align-items: flex-start; 
+        margin-top: 15%;
+    }
+
+    .header_contact {
+        width: 100%; 
+        margin-bottom: 5%; 
+    }
+
+    .header_text_contact {
+        margin-left: 10px; 
+    }
+}
+
+.icon_btn {
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-width: 1px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#fb_icon {
+    font-size: 25px;
+    color: #000;
+}
+
+#ig_icon {
+    font-size: 25px;
+    color: #000;
+}
+
+#yt_icon {
+    font-size: 25px;
+    color: #000;
+}

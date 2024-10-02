@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="asset_dki_sulut/logo.png" type="image/png">
+    <title>Diskominfo Sulawesi Utara</title>
+    <link rel="stylesheet" href="informasi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Tambahkan ini di dalam setiap halaman di dalam iframe -->
+    <script>
+        window.addEventListener('load', () => {
+            window.parent.postMessage({ type: 'updateLastVisitedPage', url: window.location.href }, '*');
+        });
+    </script>
+    <!-- kotak navigasi bagian atas -->
+    <nav id="navbar_top">
+        <a href="../home/home.html" style="display: flex; text-decoration: none;">
+            <img id="logo_p_sulut" src="../../asset_dki_sulut/logo.png" alt="Logo" />
+            <div id="header_text_logo">
+                <h5 id="text_DKIS1">Dinas Komunikasi, Informatika,</h5>
+                <h5 id="text_DKIS2">Persandian dan Statistik</h5>
+                <h6 id="text_Prov_Sulut">Sulawesi Utara</h6>
+            </div>
+        </a>
+        <div id="container_navbar">
+            <button class="btn_navigation" onclick="navigateProfile()">
+                Profil
+            </button>
+            <script>
+                function navigateProfile() {
+                  window.location.href = '../profil/profil.html';
+                }
+            </script>
+            <button class="btn_navigation" style="background-color: rgba(255, 0, 0, 0.1); border-radius: 20px;" data-url="https://example.com">Informasi</button>
+            <button class="btn_navigation"  id="openModal_Program">
+                Program 
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation"  id="openModal_Regulasi">
+                Regulasi
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation"  id="openModal_Laporan">
+                Laporan
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation"  id="openModal_Layanan">
+                Layanan
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button class="btn_navigation" id="openModal_PPID">
+                PPID
+                <i class="fa-solid fa-angle-down" style="margin-left: 10px;"></i>
+            </button>
+            <button id="icon_menu_bar" class="nav_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="dropdown_container" id="dropdown_menu">
+        <button class="btn_navigation_drop" onclick="navigateprofile()">Profil</button>
+        <script>
+            function navigateprofile() {
+              window.location.href = '../profil/profil.html';
+            }
+        </script>
+        <button class="btn_navigation_drop" data-url="https://example.com">> Informasi <</Informasi></button>
+        <select id="navigationSelect1" class="btn_navigation_drop">
+            <option value="">Program</option>
+            <option value="page1.html">Rencana Strategis</option>
+            <option value="page2.html">Indikator Kinerja Utama</option>
+            <option value="page3.html">Perjanjian Kinerja</option>
+            <option value="page4.html">Rencana Anggaran</option>
+            <option value="page5.html">Ringkasan RKA</option>
+        </select>
+
+        <select id="navigationSelect2" class="btn_navigation_drop">
+            <option value="">Regulasi</option>
+            <option value="page1.html">Laporan Keuangan</option>
+            <option value="page2.html">Ringkasan DPA</option>
+            <option value="page3.html">Ringkasan LRA</option>
+        </select>
+
+        <select id="navigationSelect3" class="btn_navigation_drop">
+            <option value="">Laporan</option>
+            <option value="page1.html">Landasan Hukum</option>
+            <option value="page2.html">Peraturan Pemerintah</option>
+            <option value="page3.html">Peraturan Gubernur</option>
+        </select>
+
+        <select id="navigationSelect4" class="btn_navigation_drop">
+            <option value="">Layanan</option>
+            <option value="page1.html">Maklumat Pelayanan</option>
+            <option value="page2.html">Jenis Layanan</option>
+            <option value="page3.html">Layanan DKIPS</option>
+            <option value="page4.html">WHI STLEBLOWING SYSTEM</option>
+            <option value="page5.html">Pengadman/Laporan</option>
+        </select>
+
+        <select id="navigationSelect5" class="btn_navigation_drop">
+            <option value="">PPID</option>
+            <option value="page1.html">Profil PPID</option>
+            <option value="page2.html">Informasi Terbuka Setiap Saat</option>
+            <option value="page3.html">Informasi Terbuka Berkala</option>
+            <option value="page4.html">Informasi Berkala</option>
+            <option value="page5.html">Kontak</option>
+        </select>
+        
+        <script>
+            function addNavigationListener(selectId) {
+                document.getElementById(selectId).addEventListener('change', function() {
+                    const selectedValue = this.value;
+                    if (selectedValue) {
+                        window.location.href = selectedValue;
+                    }
+                });
+            }
+        
+            // Add event listeners to both select elements
+            addNavigationListener('navigationSelect1');
+            addNavigationListener('navigationSelect2');
+            addNavigationListener('navigationSelect3');
+            addNavigationListener('navigationSelect4');
+            addNavigationListener('navigationSelect5');
+        </script>
+    </div>
+    <script>
+        document.getElementById('icon_menu_bar').addEventListener('click', function() {
+            var dropdown = document.getElementById('dropdown_menu');
+            dropdown.classList.toggle('show');
+        });
+
+        function handleResize() {
+            var dropdown = document.getElementById('dropdown_menu');
+            if (window.innerWidth > 1024) {
+                dropdown.classList.remove('show');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+    </script>
+
+    <!-- modal untuk Program -->
+    <div id="myModalProgram" class="modalProgram">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Program</h2>
+            <button class="close_Program">&times;</button>
+        </div>
+        <div class="header_button">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRencanaStrategis()">
+                        <script>
+                            function navigateRencanaStrategis() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Rencana Strategis</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateIndikatorUtama()">
+                        <script>
+                            function navigateIndikatorUtama() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Indikator Kinerja Utama</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePerjanjuanKinerja()">
+                        <script>
+                            function navigatePerjanjuanKinerja() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Perjanjian Kinerja</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRencanaAnggaran()">
+                        <script>
+                            function navigateRencanaAnggaran() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Rencana Anggaran</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRingkasanRKA()">
+                        <script>
+                            function navigateRingkasanRKA() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Ringkasan RKA</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modalProgram = document.getElementById("myModalProgram");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModal_Program");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_Program")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modalProgram.style.display = "block";
+            modalPpid.style.display = "none";
+            modalRegulasi.style.display = "none";
+            modalLaporan.style.display = "none";
+            modalLayanan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modalProgram.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalProgram) {
+                modalProgram.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- modal untuk Regulasi -->
+    <div id="myModalRegulasi" class="modalRegulasi">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Regulasi</h2>
+            <button class="close_Regulasi">&times;</button>
+        </div>
+        <div class="header_button">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateLandasanHukum()">
+                        <script>
+                            function navigateLandasanHukum() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Landasan Hukum</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePeraturanPemerintah()">
+                        <script>
+                            function navigatePeraturanPemerintah() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Peraturan Pemerintah</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePeraturanGubernur()">
+                        <script>
+                            function navigatePeraturanGubernur() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Peraturan Gubernur</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modalRegulasi = document.getElementById("myModalRegulasi");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModal_Regulasi");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_Regulasi")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modalRegulasi.style.display = "block";
+            modalPpid.style.display = "none";
+            modalProgram.style.display = "none";
+            modalLaporan.style.display = "none";
+            modalLayanan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modalRegulasi.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalRegulasi) {
+                modalRegulasi.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- modal untuk Laporan -->
+    <div id="myModalLaporan" class="modalLaporan">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Laporan</h2>
+            <button class="close_Laporan">&times;</button>
+        </div>
+        <div class="header_button">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateLaporanKeuangan()">
+                        <script>
+                            function navigateLaporanKeuangan() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Laporan Keuangan</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRingkasanDPA()">
+                        <script>
+                            function navigateRingkasanDPA() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Ringkasan DPA</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateRingkasanLRA()">
+                        <script>
+                            function navigateRingkasanLRA() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Ringkasan LRA</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateREN_KUE()">
+                        <script>
+                            function navigateREN_KUE() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">REN KEU</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modalLaporan = document.getElementById("myModalLaporan");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModal_Laporan");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_Laporan")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modalLaporan.style.display = "block";
+            modalPpid.style.display = "none";
+            modalProgram.style.display = "none";
+            modalRegulasi.style.display = "none";
+            modalLayanan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modalLaporan.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalLaporan) {
+                modalLaporan.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <!-- modal untuk Layanan -->
+    <div id="myModalLayanan" class="modalLayanan">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">Layanan</h2>
+            <button class="close_Layanan">&times;</button>
+        </div>
+        <div class="header_button">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateMaklumatPelayanan()">
+                        <script>
+                            function navigateMaklumatPelayanan() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Maklumat Pelayanan</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateJenisLayanan()">
+                        <script>
+                            function navigateJenisLayanan() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Jenis Layanan</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn"onclick="navigateLayananDKIPS()">
+                        <script>
+                            function navigateLayananDKIPS() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Layanan DKIPS</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateSYSTEM()">
+                        <script>
+                            function navigateSYSTEM() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">WHI STLEBLOWING SYSTEM</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigatePengadman()">
+                        <script>
+                            function navigatePengadman() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Pengadman/Laporan</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modalLayanan = document.getElementById("myModalLayanan");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModal_Layanan");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_Layanan")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modalLayanan.style.display = "block";
+            modalPpid.style.display = "none";
+            modalProgram.style.display = "none";
+            modalRegulasi.style.display = "none";
+            modalLaporan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modalLayanan.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalLayanan) {
+                modalLayanan.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- modal untuk PPID -->
+    <div id="myModalPpid" class="modalPpid">
+        <div style="display: flex;">
+            <h2 style="font-size: 27px; color: white;">PPID</h2>
+            <button class="close_Ppid">&times;</button>
+        </div>
+        <div class="header_button">
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateProfilPPID()">
+                        <script>
+                            function navigateProfilPPID() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Profil PPID</h3>
+                        </div>
+                    </button>
+                </div>
+                <div>
+                    <button class="menu_btn" onclick="navigateKontak()">
+                        <script>
+                            function navigateKontak() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Kontak</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateInformasiSetiapSaat()">
+                        <script>
+                            function navigateInformasiSetiapSaat() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Informasi Terbuka Setiap Saat</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button class="menu_btn" onclick="navigateInformasiBerkala()">
+                        <script>
+                            function navigateInformasiBerkala() {
+                              window.location.href = 'https://example.com';
+                            }
+                        </script>
+                        <div class="icon">
+                            <p class="content_icon">i</p>
+                        </div>
+                        <div class="header_text_des">
+                            <h3 class="text_title">Informasi Terbuka Berkala</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        // Get the modal
+        var modalPpid = document.getElementById("myModalPpid");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModal_PPID");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_Ppid")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modalPpid.style.display = "block";
+            modalProgram.style.display = "none";
+            modalRegulasi.style.display = "none";
+            modalLaporan.style.display = "none";
+            modalLayanan.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modalPpid.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalPpid) {
+                modalPpid.style.display = "none";
+            }
+        }
+
+        // untuk menutup 2 modal secara otomatis ketika layar diperkecil
+        window.onresize = function() {
+            if (window.innerWidth < 768) { 
+                modalPpid.style.display = "none";
+                modalProgram.style.display = "none";
+                modalRegulasi.style.display = "none";
+                modalLaporan.style.display = "none";
+                modalLayanan,style.display = "none";
+            }
+        }
+    </script>
+    
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <div class="overlay">
+                <div class="slide-content">
+                    <h2 class="txt-pemprov">Pemerintahan Provinsi</h2>
+                    <h1 class="txt-judul">Meriahkan HUT ke-78 Bhayangkara di Sulut: Wagub Steven Kandouw, Pangdam XIII Merdeka, dan Kapolda Sulut Ikut Tarian Ampa Wayer.</h1>
+                    <div class="text-waktu">
+                        <h5>Wagub Sulut</h5>
+                        <h5 class="space">|</h5>
+                        <h5>1 Bulan yang lalu</h5>
+                    </div>
+                </div>
+            </div>
+            <img src="../../asset_dki_sulut/1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="overlay">
+                <div class="slide-content">
+                    <h2 class="txt-pemprov">Pemerintahan Provinsi</h2>
+                    <h1 class="txt-judul">Sekprov Sulut Steve Kepel Ajak Pemuda Bijak dalam Memahami dan Menggunakan Teknologi Digital.</h1>
+                    <div class="text-waktu">
+                        <h5>Steve Kepel</h5>
+                        <h5 class="space">|</h5>
+                        <h5>5 bulan yang lalu</h5>
+                    </div>
+                </div>
+            </div>
+            <img src="../../asset_dki_sulut/2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="overlay">
+                <div class="slide-content">
+                    <h2 class="txt-pemprov">Pemerintahan Provinsi</h2>
+                    <h1 class="txt-judul">Steven Kandouw Bakal Paparkan Strategi OD-SK Dorong Komoditi Sulut ke Pasar Internasional di Forum Publik.</h1>
+                    <div class="text-waktu">
+                        <h5>Wagub Sulut</h5>
+                        <h5 class="space">|</h5>
+                        <h5>5 bulan yang lalu</h5>
+                    </div>
+                </div>
+            </div>
+            <img src="../../asset_dki_sulut/3.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="overlay">
+                <div class="slide-content">
+                    <h2 class="txt-pemprov">Pemerintahan Provinsi</h2>
+                    <h1 class="txt-judul">Pemerintah Sulawesi Utara Apresiasi Penurunan Angka Stunting di Daerah.</h1>
+                    <div class="text-waktu">
+                        <h5>Wakil Gubernur Sulut</h5>
+                        <h5 class="space">|</h5>
+                        <h5>10 bulan yang lalu</h5>
+                    </div>
+                </div>
+            </div>
+            <img src="../../asset_dki_sulut/4.jpg" style="width:100%">
+        </div>
+
+        <!-- Tombol Next dan Prev -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- Titik navigasi -->
+    <div class="header-loading">
+        <div class="loading-dots">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </div>
+     
+    <script src="slideshow.js"></script>
+
+    <!-- footer -->
+    <div id="footer_dkis">
+        <div id="header_logo">
+            <img src="../../asset_dki_sulut/logo.png" id="footer_logo"/>
+            <div id="header_text_dkis_down">
+                <h3 id="text_diskominfo1">Dinas Komunikasi, Informatika</h3>
+                <h3 id="text_diskominfo2">Persandian dan Statistik</h3>
+                <p id="text_sulut">Sulawesi Utara</p>
+            </div>
+        </div>
+        <div id="contant_container">
+            <div class="header_contact">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="header_text_contact">
+                    <h4>DINAS KOMUNIKASI DAN INFORMATIKA</h4>
+                    <h4>PROVINSI SULAWESI UTARA</h4>
+                    <p>Jl. 17 Agustus No. 69 Manado 95119</p>
+                    <p>Telp. (0431) 865559 Fax. (0431) 865471</p>
+                </div>
+            </div>
+            <div class="header_contact">
+                <i class="fa-solid fa-phone"></i>
+                <div class="header_text_contact">
+                    <h4>Telepon</h4>
+                    <p>+431-865559</p>
+                </div>
+            </div>
+            <div class="header_contact">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="header_text_contact">
+                    <h4>Surel</h4>
+                    <p>dkips@sulutprov.go.id</p>
+                </div>
+            </div>
+            <div class="header_contact">
+                <i class="fa-solid fa-globe"></i>
+                <div class="header_text_contact">
+                    <h4>Surel</h4>
+                    <div style="display: flex;">
+                        <button class="icon_btn" data-url="https://example.com">
+                            <i class="fa-brands fa-facebook" id="fb_icon"></i>
+                        </button>
+                        <button class="icon_btn" data-url="https://example.com">
+                            <i class="fa-brands fa-instagram" id="ig_icon"></i>
+                        </button>
+                        <button class="icon_btn" data-url="https://example.com">
+                            <i class="fa-brands fa-youtube" id="yt_icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

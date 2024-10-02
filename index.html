@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="asset_dki_sulut/logo.png" type="image/png">
+    <title>Diskominfo Sulawesi Utara</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 3.7px);
+            border: none;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- <audio id="welcome-audio" src="asset_dki_sulut/audio_welcome.mp3" autoplay></audio> -->
+    <iframe id="content-frame" name="content-frame"></iframe>
+
+    <script>
+        function getLastVisitedPage() {
+            return localStorage.getItem('lastVisitedPage') || 'pages/home/home.html';
+        }
+
+        function setLastVisitedPage(url) {
+            localStorage.setItem('lastVisitedPage', url);
+        }
+
+        const iframe = document.getElementById('content-frame');
+
+        iframe.src = getLastVisitedPage();
+
+        iframe.addEventListener('load', () => {
+            const iframeWindow = iframe.contentWindow;
+            const iframeDocument = iframe.contentDocument || iframeWindow.document;
+
+            function updateLastVisitedPage() {
+                setLastVisitedPage(iframe.src);
+            }
+
+            const links = iframeDocument.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    setTimeout(updateLastVisitedPage, 0); 
+                });
+            });
+        });
+
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'updateLastVisitedPage') {
+                setLastVisitedPage(event.data.url);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diskominfo Sulawesi Utara</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 3.7px);
+            border: none;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="content-frame" src="pages/home/home.html" name="content-frame"></iframe>
+    <script>
+        function loadPage() {
+            const iframe = document.getElementById('content-frame');
+            const defaultPage = 'pages/home/home.html';
+            const hash = window.location.hash.substring(1); 
+            iframe.src = hash ? hash : defaultPage;
+        }
+
+        window.onload = loadPage;
+
+        window.onhashchange = loadPage;
+    </script>
+</body>
+</html> -->
